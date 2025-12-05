@@ -8,7 +8,7 @@ app = Flask(__name__)
 # ===== CẤU HÌNH =====
 TELEGRAM_BOT_TOKEN = "8237221009:AAGzLVpVnPcZUzrrjtS60XA38JJywsRNMRk"  # Lấy từ @BotFather
 TELEGRAM_CHAT_ID = "5690514116"      # Lấy từ @userinfobot
-5. Click **"Commit new file"**
+
 def send_telegram_message(message):
     """Gửi tin nhắn đến Telegram"""
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
