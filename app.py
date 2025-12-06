@@ -7,9 +7,8 @@ from datetime import datetime
 app = Flask(__name__)
 
 # ===== CẤU HÌNH =====
-
-TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # Lấy từ @BotFather
-TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')     # Lấy từ @userinfobot
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 def send_telegram_message(message):
     """Gửi tin nhắn đến Telegram"""
@@ -94,7 +93,7 @@ def test():
     """Test endpoint"""
     test_message = "✅ Bot đang hoạt động!"
     send_telegram_message(test_message)
-return jsonify({'status': 'ok', 'message': 'Test message sent'})
+    return jsonify({'status': 'ok', 'message': 'Test message sent'})
 
 @app.route('/', methods=['GET'])
 def home():
@@ -108,6 +107,5 @@ def home():
     """
 
 if __name__ == '__main__':
-    print("🚀 Bot đang khởi động...")
-    print(f"📱 Telegram Chat ID: {TELEGRAM_CHAT_ID}")
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
