@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request, jsonify
 import requests
 import json
@@ -6,7 +7,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # ===== CẤU HÌNH =====
-import os
+
 TELEGRAM_BOT_TOKEN = os.environ.get('8237221009:AAGzLVpVnPcZUzrrjtS60XA38JJywsRNMRk')  # Lấy từ @BotFather
 TELEGRAM_CHAT_ID = os.environ.get('5690514116')     # Lấy từ @userinfobot
 
