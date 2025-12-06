@@ -14,12 +14,4 @@ cmd = "gunicorn app:app --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 2 --t
 
 ## 🔧 Hoặc tạo file `Procfile` (Cách 2 - Đơn giản hơn)
 
-Nếu cách trên vẫn lỗi, làm thế này:
 
-### Bước 1: Tạo file `Procfile`
-
-1. Click **"Add file"** → **"Create new file"**
-2. Tên file: `Procfile` (chữ P hoa, không có đuôi .txt)
-3. Nội dung (1 dòng):
-```
-web: gunicorn app:app --bind 0.0.0.0:$PORT
